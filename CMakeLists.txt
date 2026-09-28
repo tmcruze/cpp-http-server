@@ -7,3 +7,7 @@ add_executable(http_server
 )
 
 target_compile_features(http_server PRIVATE cxx_std_20)
+
+if(MSVC)
+    target_compile_options(http_server PRIVATE /W4)
+endif()
